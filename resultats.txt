@@ -31,14 +31,15 @@
     Ex 4 :
 
       -SELECT `usairports`.`City`, `flights`.`colYear`, `flights`.`colMonth`, `flights`.`ArrDelay` 
-       FROM `usairports` LEFT JOIN `flights` ON `flights`.`Dest` = `usairports`.`IATA` 
-        WHERE colyear IS NOT NULL ORDER BY `usairports`.`City` ASC
+        FROM `usairports` LEFT JOIN `flights` ON `flights`.`Dest` = `usairports`.`IATA` 
+         WHERE colyear IS NOT NULL ORDER BY `usairports`.`City` ASC
 
    
     Ex 5:
 
-      -SELECT `carriers`.`CarrierCode`, `flights`.`colYear`, `flights`.`colMonth`, `flights`.`Cancelled` FROM 
-      `carriers` LEFT JOIN `flights` ON `flights`.`UniqueCarrier` = `carriers`.`CarrierCode`
+      -SELECT `carriers`.`CarrierCode`, `flights`.`colYear`, `flights`.`colMonth`, `flights`.`Cancelled`
+        FROM `carriers` LEFT JOIN `flights` ON `flights`.`UniqueCarrier` = `carriers`.`CarrierCode`
+         where flightID IS NOT null ORDER BY `flights`.`Cancelled` DESC
 
 
     Ex 6:
