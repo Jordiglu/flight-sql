@@ -44,8 +44,8 @@
 
     Ex 6:
 
-      -SELECT `flights`.`TailNum`, `flights`.`Distance`
-        FROM `flights` WHERE distance >3000
+      -SELECT TailNum, Distance FROM `flights`
+        WHERE TailNum IS NOT NULL ORDER by Distance DESC LIMIT 10
 
 
       
