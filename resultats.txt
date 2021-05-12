@@ -31,7 +31,8 @@
     Ex 4 :
 
       -SELECT `usairports`.`City`, `flights`.`colYear`, `flights`.`colMonth`, `flights`.`ArrDelay` 
-       FROM `usairports` LEFT JOIN `flights` ON `flights`.`Dest` = `usairports`.`IATA` ORDER BY `usairports`.`City` ASC
+       FROM `usairports` LEFT JOIN `flights` ON `flights`.`Dest` = `usairports`.`IATA` 
+        WHERE colyear IS NOT NULL ORDER BY `usairports`.`City` ASC
 
    
     Ex 5:
