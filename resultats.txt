@@ -1,0 +1,51 @@
+
+
+  Nivell 1
+
+    EX 1:
+
+    Total número de filas 500.
+    Total número de registros 4758.
+    
+   
+
+    Query para acceder al total de registros :   SELECT COUNT(*) FROM flights;
+
+     
+
+
+    EX 2:
+
+    - select origin, AVG(arrdelay), AVG(depdelay) from flights
+       group by origin;
+
+
+
+    Ex 3 :
+
+
+     -  SELECT origin ,colyear,colmonth, arrdelay  FROM flights ORDER BY `Origin`,colyear,colmonth,arrdelay ASC
+
+
+
+    Ex 4 :
+
+      -SELECT `usairports`.`City`, `flights`.`colYear`, `flights`.`colMonth`, `flights`.`ArrDelay` 
+       FROM `usairports` LEFT JOIN `flights` ON `flights`.`Dest` = `usairports`.`IATA` ORDER BY `usairports`.`City` ASC
+
+   
+    Ex 5:
+
+      -SELECT `carriers`.`CarrierCode`, `flights`.`colYear`, `flights`.`colMonth`, `flights`.`Cancelled` FROM 
+      `carriers` LEFT JOIN `flights` ON `flights`.`UniqueCarrier` = `carriers`.`CarrierCode`
+
+
+    Ex 6:
+
+      -SELECT `flights`.`TailNum`, `flights`.`Distance`
+        FROM `flights` WHERE distance >3000
+
+
+      
+
+  
