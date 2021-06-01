@@ -30,9 +30,11 @@
 
     Ex 4 :
 
-      -SELECT `usairports`.`City`, `flights`.`colYear`, `flights`.`colMonth`, `flights`.`ArrDelay` 
-        FROM `usairports` LEFT JOIN `flights` ON `flights`.`Dest` = `usairports`.`IATA` 
-         WHERE colyear IS NOT NULL ORDER BY `usairports`.`City` ASC
+      SELECT AIRP.City, FL.colYear, FL.colMonth, AVG(FL.ArrDelay) 
+       FROM Flights as FL 
+         LEFT JOIN USAirports as AIRP
+          ON FL.Origin = AIRP.IATA 
+           GROUP BY City, colYear, colMonth
 
    
     Ex 5:
