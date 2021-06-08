@@ -16,7 +16,7 @@
 
     EX 2:
 
-    - select origin, AVG(arrdelay), AVG(depdelay) from flights
+    select origin, AVG(arrdelay), AVG(depdelay) from flights
        group by origin;
 
 
@@ -24,7 +24,7 @@
     Ex 3 :
 
 
-     -  SELECT origin ,colyear,colmonth, arrdelay  FROM flights ORDER BY `Origin`,colyear,colmonth,arrdelay ASC
+     SELECT origin ,colyear,colmonth, arrdelay  FROM flights ORDER BY `Origin`,colyear,colmonth,arrdelay ASC
 
 
 
@@ -39,14 +39,12 @@
    
     Ex 5:
 
-      -SELECT `carriers`.`CarrierCode`, `flights`.`colYear`, `flights`.`colMonth`, `flights`.`Cancelled`
-        FROM `carriers` LEFT JOIN `flights` ON `flights`.`UniqueCarrier` = `carriers`.`CarrierCode`
-         where flightID IS NOT null ORDER BY `flights`.`Cancelled` DESC
+         SELECT carriers.CarrierCode, flights.colYear,flights.colMonth, flights. Cancelled FROM carriers LEFT JOIN flights as flights ON flights. UniqueCarrier = carriers.CarrierCode where flightID IS NOT null AND Cancelled > 0 ORDER BY flights.Cancelled DESC
 
 
     Ex 6:
 
-      -SELECT TailNum, Distance FROM `flights`
+      SELECT TailNum, Distance FROM `flights`
         WHERE TailNum IS NOT NULL ORDER by Distance DESC LIMIT 10
 
 
