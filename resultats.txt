@@ -43,8 +43,8 @@
 
     Ex 6:
 
-      SELECT TailNum, Distance FROM `flights`
-        WHERE TailNum IS NOT NULL ORDER by Distance DESC LIMIT 10
+    SELECT TailNum, SUM(Distance) FROM `flights`
+        WHERE TailNum IS NOT NULL GROUP by TailNum ORDER by sum(Distance) DESC LIMIT 10
 
 
       
