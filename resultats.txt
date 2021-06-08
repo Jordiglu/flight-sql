@@ -16,7 +16,7 @@
 
     EX 2:
 
-    select origin, AVG(arrdelay), AVG(depdelay) from flights
+       select origin, AVG(arrdelay), AVG(depdelay) from flights
        group by origin;
 
 
@@ -38,8 +38,7 @@
 
    
     Ex 5:
-
-         SELECT carriers.CarrierCode, flights.colYear,flights.colMonth, flights. Cancelled FROM carriers LEFT JOIN flights as flights ON flights. UniqueCarrier = carriers.CarrierCode where flightID IS NOT null AND Cancelled > 0 ORDER BY flights.Cancelled DESC
+        SELECT UniqueCarrier, colYear, colMonth, SUM(Cancelled) FROM flights where flightID IS NOT null AND Cancelled > 0 GROUP BY UniqueCarrier, colYear, colMonth , cancelled ORDER BY `SUM(Cancelled)` DESC
 
 
     Ex 6:
